@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="透過範例與互動測驗學習 Python 類別與物件。">
+<title>Python 類別與物件｜互動學習網頁</title>
+<style>
+:root{--bg:#0b1220;--panel:#172338;--line:#30415a;--text:#e9f0fa;--muted:#a8bbd0;--accent:#6bd7ba;--blue:#8bbcff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);line-height:1.75}header{position:sticky;top:0;background:#0b1220eF;border-bottom:1px solid var(--line);z-index:2}nav{max-width:1060px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}nav strong{color:var(--accent)}nav a{color:var(--muted);text-decoration:none;margin-left:15px;font-size:14px}nav a:hover{color:white}.hero{padding:95px 22px 85px;text-align:center;background:radial-gradient(ellipse at top,#23436a 0%,#0b1220 65%)}.pill{display:inline-block;color:var(--accent);border:1px solid #397c76;border-radius:100px;padding:4px 14px;font-size:13px}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.2;margin:24px auto 14px}.hero p{max-width:650px;margin:0 auto 28px;color:var(--muted)}.btn{display:inline-block;background:var(--accent);color:#082021;border:0;border-radius:10px;padding:11px 22px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer}.btn:hover{filter:brightness(1.1)}main{max-width:1060px;padding:25px 22px 90px;margin:auto}section{scroll-margin-top:100px;margin-top:65px}h2{font-size:29px;margin:0 0 8px}h3{color:var(--blue);margin:0 0 8px}.lead{color:var(--muted);margin:0 0 22px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}.card p{color:var(--muted);margin:8px 0}.number{color:var(--accent);font-weight:800;font-size:22px}.code{position:relative;background:#080e19;border:1px solid var(--line);border-radius:13px;margin:20px 0;overflow:hidden}.code .bar{padding:9px 17px;background:#1b2a3e;color:#bcd0e7;font-size:13px}.code pre{padding:20px;overflow:auto;margin:0;color:#d9eaff;font-size:14px;line-height:1.8;tab-size:4}.output{background:#101e2d;padding:13px 18px;border-left:3px solid var(--accent);border-radius:5px;color:#b9f3e4}.note{background:#173b40;border:1px solid #2a6e6a;border-radius:12px;padding:15px 19px;margin:18px 0}.quiz-question{margin:0 0 15px;font-weight:700}.options{display:grid;gap:10px}.option{display:block;padding:12px 15px;background:#101b2d;border:1px solid var(--line);border-radius:10px;cursor:pointer}.option:has(input:checked){border-color:var(--accent);background:#183a3a}.option input{margin-right:10px;accent-color:#6bd7ba}.result{margin-top:15px;font-weight:700;min-height:26px}.correct{color:#7ce3a1}.wrong{color:#ffb4b4}footer{text-align:center;border-top:1px solid var(--line);color:var(--muted);padding:28px 15px}@media(max-width:720px){.grid{grid-template-columns:1fr}nav a{margin-left:9px}.hero{padding:65px 20px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<header><nav><strong>PyLearn / Python 學習站</strong><div><a href="#concept">基礎觀念</a><a href="#example">程式範例</a><a href="#quiz">互動測驗</a></div></nav></header>
+<div class="hero"><span class="pill">Python 初學者友善課程</span><h1>從零學會<br><span style="color:var(--accent)">類別與物件</span></h1><p>用簡單的中文說明、實際程式範例和小測驗，快速理解 Python 物件導向程式設計。</p><a class="btn" href="#concept">開始學習</a></div>
+<main>
+<section id="concept"><h2>01 / 什麼是類別與物件？</h2><p class="lead">先認識物件導向程式設計（OOP）最重要的三個觀念。</p><div class="grid"><article class="card"><div class="number">01</div><h3>類別 Class</h3><p>類別就像「設計圖」，定義物件有哪些資料與功能。例如：學生類別。</p></article><article class="card"><div class="number">02</div><h3>物件 Object</h3><p>物件是根據類別建立的實際個體。同一個類別可以建立多個學生物件。</p></article><article class="card"><div class="number">03</div><h3>屬性與方法</h3><p>屬性保存資料（例如姓名）；方法是物件可以執行的功能（例如自我介紹）。</p></article></div></section>
+<section id="example"><h2>02 / 第一個 Python 類別</h2><p class="lead">以下程式建立 Student 類別，並產生一位學生物件。</p><div class="code"><div class="bar">student.py</div><pre><code>class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"大家好，我是{self.name}，今年{self.age}歲。")
+
+student1 = Student("小明", 20)
+student1.introduce()</code></pre></div><h3>執行結果</h3><div class="output">大家好，我是小明，今年20歲。</div><div class="note"><strong>重點整理：</strong> <code>__init__</code> 是建立物件時執行的初始化方法；<code>self</code> 代表目前的物件；<code>student1</code> 是 Student 類別建立出來的物件。</div></section>
+<section><h2>03 / 一個類別，多個物件</h2><p class="lead">每個物件可以有自己的屬性值，互不影響。</p><div class="code"><div class="bar">multiple_students.py</div><pre><code>student1 = Student("小明", 20)
+student2 = Student("小美", 19)
+
+student1.introduce()
+student2.introduce()</code></pre></div><div class="output">大家好，我是小明，今年20歲。<br>大家好，我是小美，今年19歲。</div><p>這就是類別的好處：可以重複使用相同的設計，建立不同資料的物件。</p></section>
+<section id="quiz"><h2>04 / 互動小測驗</h2><p class="lead">完成三題選擇題，檢查自己是否理解。</p><div class="card"><form id="quizForm"><div class="question"><p class="quiz-question">1. Python 使用哪個關鍵字定義類別？</p><div class="options"><label class="option"><input type="radio" name="q1" value="a">function</label><label class="option"><input type="radio" name="q1" value="b">class</label><label class="option"><input type="radio" name="q1" value="c">object</label></div></div><hr style="border:0;border-top:1px solid var(--line);margin:24px 0"><div class="question"><p class="quiz-question">2. <code>self</code> 通常代表什麼？</p><div class="options"><label class="option"><input type="radio" name="q2" value="a">目前的物件</label><label class="option"><input type="radio" name="q2" value="b">所有類別</label><label class="option"><input type="radio" name="q2" value="c">Python 的版本</label></div></div><hr style="border:0;border-top:1px solid var(--line);margin:24px 0"><div class="question"><p class="quiz-question">3. 哪個方法通常在建立物件時進行初始化？</p><div class="options"><label class="option"><input type="radio" name="q3" value="a">__start__</label><label class="option"><input type="radio" name="q3" value="b">__init__</label><label class="option"><input type="radio" name="q3" value="c">__main__</label></div></div><p><button class="btn" type="submit">送出答案</button> <button class="btn" style="background:#33475f;color:white" type="reset">重新作答</button></p><div class="result" id="result" aria-live="polite"></div></form></div></section>
+<section><h2>05 / 課程總結</h2><div class="card"><p>你已經學會了 Python 類別（Class）、物件（Object）、屬性（Attribute）、方法（Method），以及 <code>__init__</code> 和 <code>self</code> 的基本用法。</p><p>下一步可以嘗試自己建立 <strong>Employee</strong> 類別，加入姓名、部門和薪資等屬性，練習將概念應用在實際專案中。</p></div></section>
+</main><footer>Python 類別與物件互動學習網頁 · 使用 HTML / CSS / JavaScript 製作</footer>
+<script>
+const form=document.getElementById('quizForm');const result=document.getElementById('result');form.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(form);if(['q1','q2','q3'].some(q=>!data.get(q))){result.className='result wrong';result.textContent='請先完成所有題目！';return}const answers={q1:'b',q2:'a',q3:'b'};let score=0;for(const [q,a] of Object.entries(answers))if(data.get(q)===a)score++;result.className='result '+(score===3?'correct':'wrong');result.textContent=`你答對 ${score} / 3 題。${score===3?'太棒了！你已經掌握基本觀念。':'再看看上面的教學內容，重新挑戰吧！'}`});form.addEventListener('reset',()=>{result.textContent='';result.className='result'});
+</script>
+</body></html>
